@@ -197,7 +197,7 @@ $(call add-path-map, stlport:external/stlport/stlport \
 # prebuild source kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/asus/a500cg/intel-boot-tools/boot.mk
 BOARD_CUSTOM_MKBOOTIMG := device/asus/a500cg/intel-boot-tools/boot.mk
-#TARGET_PREBUILT_KERNEL := device/asus/a500cg/kernel
+TARGET_PREBUILT_KERNEL := device/asus/a500cg/kernel
 DEVICE_BASE_BOOT_IMAGE := device/asus/a500cg/blobs/boot_60.img
 DEVICE_BASE_RECOVERY_IMAGE := device/asus/a500cg/blobs/recovery_60.img
 

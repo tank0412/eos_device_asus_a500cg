@@ -27,13 +27,13 @@ PRODUCT_BRAND := asus
 PRODUCT_MODEL := ASUS_T00F
 PRODUCT_DEVICE := a500cg
 
-#ifeq ($(TARGET_PREBUILT_KERNEL),)
-#	LOCAL_KERNEL := device/asus/a500cg/blobs/bzImage-boot-newDTW
-#else
-#	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-#endif
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_KERNEL):kernel
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+	LOCAL_KERNEL := device/asus/a500cg/blobs/bzImage-boot-newDTW
+else
+	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
 
 #TARGET_RECOVERY_PREBUILT_KERNEL := $(LOCAL_KERNEL)
 
@@ -226,10 +226,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
   Stk
 
+#PRODUCT_PACKAGES += \
+  #libmultidisplay \
+  #libmultidisplayjni \
+  #com.intel.multidisplay.xml
+
 PRODUCT_PACKAGES += \
-  libmultidisplay \
-  libmultidisplayjni \
-  com.intel.multidisplay.xml
+	com.intel.multidisplay.xml \
+	com.intel.multidisplay \
+	libmultidisplay \
+	libmultidisplayjni
+
 
 # library
 PRODUCT_PACKAGES += \
